@@ -28,8 +28,9 @@ namespace Shop.Data.BusinessModels
             }
             else
             {
-                throw new Exception("Check for good type failed!");
+                Console.WriteLine("It's not for this shop!");
             }
+                
         }
 
         public abstract bool CheckGoods(Good good);
