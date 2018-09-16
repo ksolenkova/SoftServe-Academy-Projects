@@ -29,6 +29,7 @@ namespace Shop.Data.BusinessModels
             else
             {
                 Console.WriteLine("It's not for this shop!");
+                Console.WriteLine();
             }
                 
         }

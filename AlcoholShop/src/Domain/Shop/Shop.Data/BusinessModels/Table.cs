@@ -6,29 +6,32 @@ namespace Shop.Data.BusinessModels
 {
     public class Table
     {
+        private string name;
         private int seats;
         private List<Client> clients;
         private Waitress waitress;
 
-        public Table(int seats, List<Client> clients)
+        public Table(int seats, List<Client> clients, string name)
         {
             this.seats = seats;
             this.clients = clients;
+            this.name = name;
         }
 
         public Waitress Waitress { get { return waitress; } set { waitress = value; } }
+        public string Name { get { return name; } }
      
-        public void GetClientsNames()
+        public void GetClientsNames(string name)
         {
             var names = new List<string>();
-            Console.Write("Table1 has these clients: ");
+            Console.Write(name + " has these clients: ");
 
             foreach (var client in clients)
             {
                 names.Add(client.FirstName);
             }
             string clientsName = string.Join(", ", names);
-            Console.WriteLine(clientsName);
+            Console.WriteLine(clientsName + '.');
         }
     }
 }

@@ -34,22 +34,32 @@ namespace ConsoleApp1
             waitresses.Add(waitressPenka);
             waitresses.Add(waitressSuzi);
 
-            var table1 = new Table(3, firstClients);
+            var table1 = new Table(3, firstClients, "Table 1");
             table1.Waitress = waitressPenka;
-            Console.WriteLine($"Avanti's table1 waitress is {table1.Waitress.FirstName}.");
-            table1.GetClientsNames();
+            Console.WriteLine($"Avanti's table 1 waitress is {table1.Waitress.FirstName}.");
+            table1.GetClientsNames(table1.Name);
+            Console.WriteLine();  
 
-            var table2 = new Table(3, secondClients);
+            var table2 = new Table(3, secondClients, "Table 2");
             table2.Waitress = waitressSuzi;
-            Console.WriteLine($"Avanti's table2 waitress is {table2.Waitress.FirstName}.");
-            table2.GetClientsNames();
+            Console.WriteLine($"Avanti's table 2 waitress is {table2.Waitress.FirstName}.");
+            table2.GetClientsNames(table2.Name);
+            Console.WriteLine();
 
             var tables = new List<Table>();
             tables.Add(table1);
             tables.Add(table2);
 
-            var fridgeSamsung = new Fridge();
+            var fridgeSamsung = new Fridge("Fridge Samsung", 4, true);
+            fridgeSamsung.PushButtonOn(fridgeSamsung.Name);
+            fridgeSamsung.PushButtonOff(fridgeSamsung.Name);
+            fridgeSamsung.PushButtonOn(fridgeSamsung.Name);
 
+            var airConditionerDaikin = new AirConditioner("Air conditioner  Daikin", 23, false, "purple");
+            airConditionerDaikin.PushButtonOn(airConditionerDaikin.Name);
+            airConditionerDaikin.PushButtonOff(airConditionerDaikin.Name);
+            airConditionerDaikin.PushButtonOn(airConditionerDaikin.Name);
+   
             var alcoholShop = new AlcoholShop("Avanti", tables, waitresses, fridgeSamsung);
 
             var vodka = new Alcohol("Vodka",25);
@@ -61,8 +71,6 @@ namespace ConsoleApp1
             alcoholShop.AddGood(vodka);
             alcoholShop.AddGood(whiskey);
             alcoholShop.AddGood(beer);
-
-            fridgeSamsung.PutInFridge(alcoholShop.Goods);
 
             Console.WriteLine($"Income before---> {alcoholShop.Income} " +
                $"Count: {alcoholShop.Goods.Count()}");

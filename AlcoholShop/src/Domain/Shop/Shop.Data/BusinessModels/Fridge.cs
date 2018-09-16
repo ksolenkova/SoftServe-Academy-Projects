@@ -4,26 +4,10 @@ using System.Text;
 
 namespace Shop.Data.BusinessModels
 {
-    public class Fridge
+    public class Fridge : Appliance
     {
-        private List<Alcohol> alcohols;
-
-        public void PutInFridge(List<Good> goods)
+        public Fridge(string name, int degree, bool isButtonOn) : base(name, degree, isButtonOn)
         {
-            var alcoholInFridge = new List<string>();
-            Console.Write("In the fridge we have: ");
-
-            foreach (var good in goods)
-            {
-                if(good is Alcohol)
-                {
-                    alcoholInFridge.Add(good.Name);
-                    
-                } 
-            }
-           
-            var alcoholNames = string.Join(", ", alcoholInFridge);
-            Console.WriteLine(alcoholNames);
         }
     }
 }
