@@ -9,6 +9,8 @@ namespace ConsoleApp1
     { 
         static void Main(string[] args)
         {
+            Console.WriteLine("====== Alcohol Shop =====");
+            Console.WriteLine();
             var pesho = new Client("Pesho", "Petrov", 21);
             var gosho = new Client("Gosho", "Goshov", 18);
             var mariika = new Client("Mariika", "Petrova", 25);
@@ -56,14 +58,7 @@ namespace ConsoleApp1
             fridgeSamsung.PushButtonOn(fridgeSamsung.Name);
             fridgeSamsung.ChangeDegree(true, fridgeSamsung);
             Console.WriteLine();
-
-            var airConditionerDaikin = new AirConditioner("Air conditioner  Daikin", 23, false, "purple");
-            airConditionerDaikin.PushButtonOn(airConditionerDaikin.Name);
-            airConditionerDaikin.PushButtonOff(airConditionerDaikin.Name);
-            airConditionerDaikin.PushButtonOn(airConditionerDaikin.Name);
-            airConditionerDaikin.ChangeDegree(false, airConditionerDaikin);
-            Console.WriteLine();
-   
+            
             var alcoholShop = new AlcoholShop("Avanti", tables, waitresses, fridgeSamsung);
             var avantiLtd = new Company();
             avantiLtd.Name = "Avanti LTD";
@@ -93,10 +88,53 @@ namespace ConsoleApp1
 
             alcoholShop.Sell(beer);
     
-
             Console.WriteLine($"In {alcoholShop.Name}'s income after ---> {alcoholShop.Income} lv. " +
                $"Count: {alcoholShop.Goods.Count()}");
+            Console.WriteLine();
+
+            Console.WriteLine("====== Candy Shop =====");
+
+            var sellerCandyShop = new Seller("Ani", "Petkova", 21);
+            sellerCandyShop.Sallary = 750;
             
+            var airConditionerDaikin = new AirConditioner("Air conditioner  Daikin", 23, false, "purple");
+            var candyShop = new CandyShop(sellerCandyShop, airConditionerDaikin);
+            Console.WriteLine();
+
+            var candyLtd = new Company();
+            candyLtd.Name = "Candy LTD";
+            candyShop.Company = candyLtd;
+
+            airConditionerDaikin.PushButtonOn(airConditionerDaikin.Name);
+            airConditionerDaikin.PushButtonOff(airConditionerDaikin.Name);
+            airConditionerDaikin.PushButtonOn(airConditionerDaikin.Name);
+            airConditionerDaikin.ChangeDegree(false, airConditionerDaikin);
+            Console.WriteLine();
+
+            var chocolate = new Candy("Chocolate", 1.8m);
+            var candyBar = new Candy("Candy bar", 1.5m);
+            var sweet = new Candy("Sweet", 2.5m);
+            var expensiveSweet = new Candy("ExpensiveSweet", 25);
+
+            candyShop.AddGood(chocolate);
+            candyShop.AddGood(candy);
+            candyShop.AddGood(candyBar);
+            candyShop.AddGood(sweet);
+            candyShop.AddGood(beer);
+            candyShop.AddGood(expensiveSweet);
+
+            Console.WriteLine($"In {candyShop.Company.Name}'s income before ---> {candyShop.Income} lv. " +
+               $"Count: {candyShop.Goods.Count()}");
+            candyShop.Sell(chocolate);
+            Console.WriteLine($"In {candyShop.Company.Name}'s income after ---> {candyShop.Income} lv. " +
+               $"Count: {candyShop.Goods.Count()}");
+            Console.WriteLine();
+
+            sellerCandyShop.GetBonus(candyShop);
+            candyShop.Sell(expensiveSweet);
+            sellerCandyShop.GetBonus(candyShop);
+  
+
         }
     }
 }

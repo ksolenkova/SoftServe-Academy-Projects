@@ -12,7 +12,7 @@ namespace Shop.Data.BusinessModels
         }
 
         public string Name { get; }
-        public decimal Price { get;}
+        public decimal Price { get; }
         
 
         public override string ToString()

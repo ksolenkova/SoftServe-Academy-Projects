@@ -19,6 +19,7 @@ namespace Shop.Data.BusinessModels
         public List<Good> Goods { get; set; }
 
         public decimal Income { get; set; }
+    
 
         public void AddGood(Good good)
         {
@@ -65,3 +66,4 @@ namespace Shop.Data.BusinessModels
         }
     }
 }
+
