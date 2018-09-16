@@ -77,7 +77,8 @@ namespace ConsoleApp1
             var whiskey = new Alcohol("Whiskey", 159);
             var beer = new Alcohol("Beer", 2);
             var candy = new Candy("Bonbon", 5);
-
+            Console.WriteLine(candy.Equals(beer));
+            
             alcoholShop.AddGood(candy);
             alcoholShop.AddGood(vodka);
             alcoholShop.AddGood(whiskey);
@@ -96,10 +97,11 @@ namespace ConsoleApp1
 
             var sellerCandyShop = new Seller("Ani", "Petkova", 21);
             sellerCandyShop.Sallary = 750;
-            
+
             var airConditionerDaikin = new AirConditioner("Air conditioner  Daikin", 23, false, "purple");
             var candyShop = new CandyShop(sellerCandyShop, airConditionerDaikin);
             Console.WriteLine();
+          
 
             var candyLtd = new Company();
             candyLtd.Name = "Candy LTD";
@@ -133,8 +135,6 @@ namespace ConsoleApp1
             sellerCandyShop.GetBonus(candyShop);
             candyShop.Sell(expensiveSweet);
             sellerCandyShop.GetBonus(candyShop);
-  
-
         }
     }
 }

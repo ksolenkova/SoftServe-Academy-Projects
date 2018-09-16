@@ -20,6 +20,7 @@ namespace Shop.Data.BusinessModels
 
         public Waitress Waitress { get { return waitress; } set { waitress = value; } }
         public string Name { get { return name; } }
+        public List<Client> Client { get { return clients; } set { clients = value; } }
      
         public void GetClientsNames(string name)
         {

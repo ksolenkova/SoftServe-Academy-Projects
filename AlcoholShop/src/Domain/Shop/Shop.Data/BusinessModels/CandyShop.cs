@@ -16,6 +16,7 @@ namespace Shop.Data.BusinessModels
         }
 
         public AirConditioner AirConditioner { get { return airConditioner; } set { airConditioner = value; } }
+        public Seller Seller { get { return seller; }set { seller = value; } }
 
         public override bool CheckGoods(Good good)
         {
