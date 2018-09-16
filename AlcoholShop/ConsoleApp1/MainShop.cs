@@ -61,24 +61,36 @@ namespace ConsoleApp1
             airConditionerDaikin.PushButtonOn(airConditionerDaikin.Name);
    
             var alcoholShop = new AlcoholShop("Avanti", tables, waitresses, fridgeSamsung);
+            var avantiLtd = new Company();
+            avantiLtd.Name = "Avanti LTD";
+            alcoholShop.Company = avantiLtd;
+            Console.WriteLine("Alcohol shop company's name is " + alcoholShop.Company.Name + '.');
+            Console.WriteLine();
 
-            var vodka = new Alcohol("Vodka",25);
-            var whiskey = new Alcohol("Whiskey",159);
+            var adressAlcoholShop = new Address();
+            adressAlcoholShop.City = "Sofia";
+            adressAlcoholShop.Street = "Lincoln street";
+            alcoholShop.Address = adressAlcoholShop;
+            Console.WriteLine($"Alcohol shop's address is {alcoholShop.Address.City}, {alcoholShop.Address.Street}.");
+            Console.WriteLine();
+
+            var vodka = new Alcohol("Vodka", 25);
+            var whiskey = new Alcohol("Whiskey", 159);
             var beer = new Alcohol("Beer", 2);
-            var candy = new Candy("bonbons", 5);
+            var candy = new Candy("Bonbon", 5);
 
             alcoholShop.AddGood(candy);
             alcoholShop.AddGood(vodka);
             alcoholShop.AddGood(whiskey);
             alcoholShop.AddGood(beer);
 
-            Console.WriteLine($"Income before---> {alcoholShop.Income} " +
+            Console.WriteLine($"In {alcoholShop.Name}'s income before ---> {alcoholShop.Income} lv. " +
                $"Count: {alcoholShop.Goods.Count()}");
 
             alcoholShop.Sell(beer);
     
 
-            Console.WriteLine($"Income after---> {alcoholShop.Income} " +
+            Console.WriteLine($"In {alcoholShop.Name}'s income after ---> {alcoholShop.Income} lv. " +
                $"Count: {alcoholShop.Goods.Count()}");
             
         }

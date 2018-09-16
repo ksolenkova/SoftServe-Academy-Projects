@@ -28,7 +28,7 @@ namespace Shop.Data.BusinessModels
             }
             else
             {
-                Console.WriteLine("It's not for this shop!");
+                Console.WriteLine($"{good.Name} is not for this shop!");
                 Console.WriteLine();
             }
                 
