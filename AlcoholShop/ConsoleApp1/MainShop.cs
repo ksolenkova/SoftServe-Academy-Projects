@@ -60,15 +60,12 @@ namespace ConsoleApp1
             Console.WriteLine();
             
             var alcoholShop = new AlcoholShop("Avanti", tables, waitresses, fridgeSamsung);
-            var avantiLtd = new Company();
-            avantiLtd.Name = "Avanti LTD";
+            var avantiLtd = new Company("Avanti LTD");
             alcoholShop.Company = avantiLtd;
             Console.WriteLine("Alcohol shop company's name is " + alcoholShop.Company.Name + '.');
             Console.WriteLine();
 
-            var adressAlcoholShop = new Address();
-            adressAlcoholShop.City = "Sofia";
-            adressAlcoholShop.Street = "Lincoln street";
+            var adressAlcoholShop = new Address("Sofia", "Lincoln street");
             alcoholShop.Address = adressAlcoholShop;
             Console.WriteLine($"Alcohol shop's address is {alcoholShop.Address.City}, {alcoholShop.Address.Street}.");
             Console.WriteLine();
@@ -77,7 +74,6 @@ namespace ConsoleApp1
             var whiskey = new Alcohol("Whiskey", 159);
             var beer = new Alcohol("Beer", 2);
             var candy = new Candy("Bonbon", 5);
-            Console.WriteLine(candy.Equals(beer));
             
             alcoholShop.AddGood(candy);
             alcoholShop.AddGood(vodka);
@@ -103,9 +99,12 @@ namespace ConsoleApp1
             Console.WriteLine();
           
 
-            var candyLtd = new Company();
-            candyLtd.Name = "Candy LTD";
+            var candyLtd = new Company("Candy LTD");
             candyShop.Company = candyLtd;
+
+            var addressCandyShop = new Address("Sofia", "Lublyana street");
+            candyShop.Address = addressCandyShop;
+            Console.WriteLine($"The address of {candyShop.Company.Name} is {candyShop.Address.City}, {candyShop.Address.Street}.");
 
             airConditionerDaikin.PushButtonOn(airConditionerDaikin.Name);
             airConditionerDaikin.PushButtonOff(airConditionerDaikin.Name);
