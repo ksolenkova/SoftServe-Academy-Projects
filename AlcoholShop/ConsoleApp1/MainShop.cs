@@ -54,11 +54,15 @@ namespace ConsoleApp1
             fridgeSamsung.PushButtonOn(fridgeSamsung.Name);
             fridgeSamsung.PushButtonOff(fridgeSamsung.Name);
             fridgeSamsung.PushButtonOn(fridgeSamsung.Name);
+            fridgeSamsung.ChangeDegree(true, fridgeSamsung);
+            Console.WriteLine();
 
             var airConditionerDaikin = new AirConditioner("Air conditioner  Daikin", 23, false, "purple");
             airConditionerDaikin.PushButtonOn(airConditionerDaikin.Name);
             airConditionerDaikin.PushButtonOff(airConditionerDaikin.Name);
             airConditionerDaikin.PushButtonOn(airConditionerDaikin.Name);
+            airConditionerDaikin.ChangeDegree(false, airConditionerDaikin);
+            Console.WriteLine();
    
             var alcoholShop = new AlcoholShop("Avanti", tables, waitresses, fridgeSamsung);
             var avantiLtd = new Company();

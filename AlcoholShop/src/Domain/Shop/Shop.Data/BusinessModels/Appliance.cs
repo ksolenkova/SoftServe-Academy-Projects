@@ -18,6 +18,8 @@ namespace Shop.Data.BusinessModels
         }
 
         public string Name { get { return name; } }
+        public bool IsButtonOn { get { return isButtonOn; } }
+        public int Degree { get { return degree; } set { this.degree = value; } }
 
         public void PushButtonOn(string name)
         {
@@ -46,6 +48,8 @@ namespace Shop.Data.BusinessModels
             }
             Console.WriteLine();
         }
-        
+
+        public abstract void ChangeDegree(bool isUp, Appliance appliance);
+       
     }
 }
