@@ -11,6 +11,7 @@ namespace ConsoleApp1
         {
             Console.WriteLine("====== Alcohol Shop =====");
             Console.WriteLine();
+
             var pesho = new Client("Pesho", "Petrov", 21);
             var gosho = new Client("Gosho", "Goshov", 18);
             var mariika = new Client("Mariika", "Petrova", 25);
@@ -27,7 +28,6 @@ namespace ConsoleApp1
             secondClients.Add(canko);
             secondClients.Add(mitko);
             secondClients.Add(goshka);
-
 
             var waitressPenka = new Waitress("Penka", "Penkova", 35);
             var waitressSuzi = new Waitress("Suzi", "Avramova", 30);
@@ -64,7 +64,7 @@ namespace ConsoleApp1
             alcoholShop.Company = avantiLtd;
             Console.WriteLine("Alcohol shop company's name is " + alcoholShop.Company.Name + '.');
             Console.WriteLine();
-
+            
             var adressAlcoholShop = new Address("Sofia", "Lincoln street");
             alcoholShop.Address = adressAlcoholShop;
             Console.WriteLine($"Alcohol shop's address is {alcoholShop.Address.City}, {alcoholShop.Address.Street}.");
@@ -95,10 +95,10 @@ namespace ConsoleApp1
             sellerCandyShop.Sallary = 750;
 
             var airConditionerDaikin = new AirConditioner("Air conditioner  Daikin", 23, false, "purple");
+
             var candyShop = new CandyShop(sellerCandyShop, airConditionerDaikin);
             Console.WriteLine();
           
-
             var candyLtd = new Company("Candy LTD");
             candyShop.Company = candyLtd;
 
