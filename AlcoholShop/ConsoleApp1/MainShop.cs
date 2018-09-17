@@ -64,7 +64,7 @@ namespace ConsoleApp1
             alcoholShop.Company = avantiLtd;
             Console.WriteLine("Alcohol shop company's name is " + alcoholShop.Company.Name + '.');
             Console.WriteLine();
-            
+          
             var adressAlcoholShop = new Address("Sofia", "Lincoln street");
             alcoholShop.Address = adressAlcoholShop;
             Console.WriteLine($"Alcohol shop's address is {alcoholShop.Address.City}, {alcoholShop.Address.Street}.");
