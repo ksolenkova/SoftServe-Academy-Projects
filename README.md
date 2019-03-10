@@ -1,2 +1,2 @@
 # SoftServe-Academy-Projects
-Project AlcoholShop
+Project C#
